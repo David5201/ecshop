@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+<package name="user_package" namespace="/" extends="json-default">
+	<action name="userAction" class="userAction" method="userRegister">
+		<result name="reg_success" type="redirect">/User/login.jsp</result>
+		<result name="reg_fail" type="redirect">/User/register.jsp</result>
+	</action>
+	
+	<action name="usernameCheckAction" class="userAction" method="usernameCheck">
+		<result type="json">
+			<param name="root">msg</param>
+		</result>
+	</action>
+	
+	<action name="loginAction" class="userAction" method="userLogin">
+		<result type="json">
+			<param name="root">msg</param>
+		</result>
+	</action>
+	
+	<action name="emailAction" class="userAction" method="usernameAndEmailCheck">
+		<result type="json">
+			<param name="root">eqa</param>
+		</result>
+	</action>
+	
+	<action name="answerAction" class="userAction" method="checkUserAnswer">
+		<result type="json">
+			<param name="root">msg</param>
+		</result>
+	</action>
+	
+	<action name="resetPasswordAction" class="userAction" method="resetUserPassword">
+		<result type="redirect">/User/email_success.jsp</result>
+		<result name="fail" type="redirect">/user/email_fail.jsp</result>
+	</action>
+	
+	<action name="loginoutAction" class="userAction" method="loginout">
+		<result type="redirect">/mainpage/homepage.jsp</result>
+	</action>
+	
+	<!-- 检查是否登录 -->
+	<action name="isLoginAction" class="userAction" method="isLogin">
+		<result type="json">
+			<param name="root">msg</param>
+		</result>
+	</action>
+	
+	<!-- 修改个人信息 -->
+	<action name="updateUserInfoAction" class="userAction" method="updateUserInfo">
+		<result name="success" type="redirect">/User/user-center.jsp</result>
+	</action>
+	
+	<!-- 验证用户的原始密码 -->
+	<action name="passwordAction" class="userAction" method="checkPassword">
+		<result type="json">
+			<param name="root">msg</param>
+		</result>
+	</action>
+	
+	<!-- 用户修改密码 -->
+	<action name="updatePasswordAction" class="userAction" method="updatePassword">
+		<result type="redirect" name="success">/User/login.jsp</result>
+	</action>
+	
+</package>
+</struts>    

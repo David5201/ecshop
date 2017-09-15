@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project adv-config="true">
+  <add-on id="web.struts2.spring"/>
+  <add-on id="spring.web"/>
+  <container path="com.genuitec.runtime.library/com.genuitec.struts_2.1">
+    <disable name="antlr-2.7.2.jar" type="jar"/>
+  </container>
+  <container path="com.genuitec.runtime.library/com.genuitec.spring_4.1">
+    <jar-attrs id="data/4.1.0/dist/spring-aop-4.1.0.RELEASE.jar">
+      <attribute name="source-path" value="D:\myeclipse_2016\configuration\org.eclipse.osgi\72\0\.cp\data\4.1.0\dist\spring-aop-4.1.0.RELEASE.jar"/>
+      <attribute name="source-path-root"/>
+      <attribute name="javadoc_location"/>
+    </jar-attrs>
+  </container>
+</project>
