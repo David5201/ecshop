@@ -1,8 +1,5 @@
 package com.lbcto.model.entity;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Shipping entity. @author MyEclipse Persistence Tools
  */
@@ -12,7 +9,7 @@ public class Shipping implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private User user;
+	private Integer userId;
 	private String name;
 	private String phone;
 	private String province;
@@ -20,7 +17,6 @@ public class Shipping implements java.io.Serializable {
 	private String district;
 	private String address;
 	private String createTime;
-	private Set orders = new HashSet(0);
 
 	// Constructors
 
@@ -29,9 +25,9 @@ public class Shipping implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Shipping(User user, String name, String phone, String province, String city, String district, String address,
-			String createTime, Set orders) {
-		this.user = user;
+	public Shipping(Integer userId, String name, String phone, String province, String city, String district,
+			String address, String createTime) {
+		this.userId = userId;
 		this.name = name;
 		this.phone = phone;
 		this.province = province;
@@ -39,7 +35,6 @@ public class Shipping implements java.io.Serializable {
 		this.district = district;
 		this.address = address;
 		this.createTime = createTime;
-		this.orders = orders;
 	}
 
 	// Property accessors
@@ -52,12 +47,12 @@ public class Shipping implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public User getUser() {
-		return this.user;
+	public Integer getUserId() {
+		return this.userId;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	public String getName() {
@@ -114,14 +109,6 @@ public class Shipping implements java.io.Serializable {
 
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
-	}
-
-	public Set getOrders() {
-		return this.orders;
-	}
-
-	public void setOrders(Set orders) {
-		this.orders = orders;
 	}
 
 }

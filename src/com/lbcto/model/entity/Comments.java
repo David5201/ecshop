@@ -9,8 +9,8 @@ public class Comments implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private User user;
-	private Product product;
+	private Integer userId;
+	private Integer productId;
 	private String comments;
 	private Integer status;
 	private String createTime;
@@ -22,9 +22,9 @@ public class Comments implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Comments(User user, Product product, String comments, Integer status, String createTime) {
-		this.user = user;
-		this.product = product;
+	public Comments(Integer userId, Integer productId, String comments, Integer status, String createTime) {
+		this.userId = userId;
+		this.productId = productId;
 		this.comments = comments;
 		this.status = status;
 		this.createTime = createTime;
@@ -40,20 +40,20 @@ public class Comments implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public User getUser() {
-		return this.user;
+	public Integer getUserId() {
+		return this.userId;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
-	public Product getProduct() {
-		return this.product;
+	public Integer getProductId() {
+		return this.productId;
 	}
 
-	public void setProduct(Product product) {
-		this.product = product;
+	public void setProductId(Integer productId) {
+		this.productId = productId;
 	}
 
 	public String getComments() {

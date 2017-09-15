@@ -1,8 +1,5 @@
 package com.lbcto.model.entity;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * User entity. @author MyEclipse Persistence Tools
  */
@@ -20,11 +17,6 @@ public class User implements java.io.Serializable {
 	private String answer;
 	private Integer role;
 	private String createTime;
-	private Set orders = new HashSet(0);
-	private Set orderItems = new HashSet(0);
-	private Set shippings = new HashSet(0);
-	private Set commentses = new HashSet(0);
-	private Set carts = new HashSet(0);
 
 	// Constructors
 
@@ -39,33 +31,10 @@ public class User implements java.io.Serializable {
 		this.role = role;
 		this.createTime = createTime;
 	}
-	
-	
-	
-	public User(String username, String password) {
-		super();
-		this.username = username;
-		this.password = password;
-	}
-	
-
-
-	public User(String username, String password, String email, String phone, String question, String answer,
-			Integer role, String createTime) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.email = email;
-		this.phone = phone;
-		this.question = question;
-		this.answer = answer;
-		this.role = role;
-		this.createTime = createTime;
-	}
 
 	/** full constructor */
 	public User(String username, String password, String email, String phone, String question, String answer,
-			Integer role, String createTime, Set orders, Set orderItems, Set shippings, Set commentses, Set carts) {
+			Integer role, String createTime) {
 		this.username = username;
 		this.password = password;
 		this.email = email;
@@ -74,11 +43,6 @@ public class User implements java.io.Serializable {
 		this.answer = answer;
 		this.role = role;
 		this.createTime = createTime;
-		this.orders = orders;
-		this.orderItems = orderItems;
-		this.shippings = shippings;
-		this.commentses = commentses;
-		this.carts = carts;
 	}
 
 	// Property accessors
@@ -153,46 +117,6 @@ public class User implements java.io.Serializable {
 
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
-	}
-
-	public Set getOrders() {
-		return this.orders;
-	}
-
-	public void setOrders(Set orders) {
-		this.orders = orders;
-	}
-
-	public Set getOrderItems() {
-		return this.orderItems;
-	}
-
-	public void setOrderItems(Set orderItems) {
-		this.orderItems = orderItems;
-	}
-
-	public Set getShippings() {
-		return this.shippings;
-	}
-
-	public void setShippings(Set shippings) {
-		this.shippings = shippings;
-	}
-
-	public Set getCommentses() {
-		return this.commentses;
-	}
-
-	public void setCommentses(Set commentses) {
-		this.commentses = commentses;
-	}
-
-	public Set getCarts() {
-		return this.carts;
-	}
-
-	public void setCarts(Set carts) {
-		this.carts = carts;
 	}
 
 }

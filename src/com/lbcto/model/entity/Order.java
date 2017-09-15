@@ -1,8 +1,5 @@
 package com.lbcto.model.entity;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Order entity. @author MyEclipse Persistence Tools
  */
@@ -12,16 +9,15 @@ public class Order implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private User user;
-	private Shipping shipping;
 	private Long orderNo;
+	private Integer userId;
+	private Integer shippingId;
 	private Double payment;
 	private Integer status;
 	private String paymentTime;
 	private String sendTime;
 	private String endTime;
 	private String createTime;
-	private Set orderItems = new HashSet(0);
 
 	// Constructors
 
@@ -30,18 +26,17 @@ public class Order implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Order(User user, Shipping shipping, Long orderNo, Double payment, Integer status, String paymentTime,
-			String sendTime, String endTime, String createTime, Set orderItems) {
-		this.user = user;
-		this.shipping = shipping;
+	public Order(Long orderNo, Integer userId, Integer shippingId, Double payment, Integer status, String paymentTime,
+			String sendTime, String endTime, String createTime) {
 		this.orderNo = orderNo;
+		this.userId = userId;
+		this.shippingId = shippingId;
 		this.payment = payment;
 		this.status = status;
 		this.paymentTime = paymentTime;
 		this.sendTime = sendTime;
 		this.endTime = endTime;
 		this.createTime = createTime;
-		this.orderItems = orderItems;
 	}
 
 	// Property accessors
@@ -54,28 +49,28 @@ public class Order implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public User getUser() {
-		return this.user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public Shipping getShipping() {
-		return this.shipping;
-	}
-
-	public void setShipping(Shipping shipping) {
-		this.shipping = shipping;
-	}
-
 	public Long getOrderNo() {
 		return this.orderNo;
 	}
 
 	public void setOrderNo(Long orderNo) {
 		this.orderNo = orderNo;
+	}
+
+	public Integer getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public Integer getShippingId() {
+		return this.shippingId;
+	}
+
+	public void setShippingId(Integer shippingId) {
+		this.shippingId = shippingId;
 	}
 
 	public Double getPayment() {
@@ -124,14 +119,6 @@ public class Order implements java.io.Serializable {
 
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
-	}
-
-	public Set getOrderItems() {
-		return this.orderItems;
-	}
-
-	public void setOrderItems(Set orderItems) {
-		this.orderItems = orderItems;
 	}
 
 }

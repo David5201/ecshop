@@ -1,8 +1,5 @@
 package com.lbcto.model.entity;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Product entity. @author MyEclipse Persistence Tools
  */
@@ -12,7 +9,7 @@ public class Product implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private Category category;
+	private Integer categoryId;
 	private String name;
 	private String subtitle;
 	private String mainImage;
@@ -22,8 +19,6 @@ public class Product implements java.io.Serializable {
 	private Integer stock;
 	private Integer status;
 	private String createTime;
-	private Set commentses = new HashSet(0);
-	private Set carts = new HashSet(0);
 
 	// Constructors
 
@@ -32,17 +27,17 @@ public class Product implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Product(Category category, String name, Double price, Integer stock) {
-		this.category = category;
+	public Product(Integer categoryId, String name, Double price, Integer stock) {
+		this.categoryId = categoryId;
 		this.name = name;
 		this.price = price;
 		this.stock = stock;
 	}
 
 	/** full constructor */
-	public Product(Category category, String name, String subtitle, String mainImage, String subImages, String detail,
-			Double price, Integer stock, Integer status, String createTime, Set commentses, Set carts) {
-		this.category = category;
+	public Product(Integer categoryId, String name, String subtitle, String mainImage, String subImages, String detail,
+			Double price, Integer stock, Integer status, String createTime) {
+		this.categoryId = categoryId;
 		this.name = name;
 		this.subtitle = subtitle;
 		this.mainImage = mainImage;
@@ -52,8 +47,6 @@ public class Product implements java.io.Serializable {
 		this.stock = stock;
 		this.status = status;
 		this.createTime = createTime;
-		this.commentses = commentses;
-		this.carts = carts;
 	}
 
 	// Property accessors
@@ -66,12 +59,12 @@ public class Product implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Category getCategory() {
-		return this.category;
+	public Integer getCategoryId() {
+		return this.categoryId;
 	}
 
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setCategoryId(Integer categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public String getName() {
@@ -144,22 +137,6 @@ public class Product implements java.io.Serializable {
 
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
-	}
-
-	public Set getCommentses() {
-		return this.commentses;
-	}
-
-	public void setCommentses(Set commentses) {
-		this.commentses = commentses;
-	}
-
-	public Set getCarts() {
-		return this.carts;
-	}
-
-	public void setCarts(Set carts) {
-		this.carts = carts;
 	}
 
 }

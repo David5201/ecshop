@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-  		<%-- <%=basePath %> --%>
+  		<base href="<%=basePath%>">
         <meta http-equiv=x-ua-compatible content="ie=edge">
         <meta name=viewport content="width=device-width,initial-scale=1">
         <title>首页</title>
@@ -16,27 +16,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <link href="//s.happymmall.com/mmall_fe/dist/css/index.css?9dd65f513c150dbd6188" rel="stylesheet">
     	<script type="text/javascript" src="User/js/jquery-3.2.1.min.js"></script>
     	<script type="text/javascript">
-			$(function (){
-				$(".lb").click(function(){
-					var url = $(this).attr("value");
-					$.post(
-					"../isLoginAction",
-					function(data){
-						if(data==="0"){
-							window.location.href="../User/login.jsp";
-						}else{
-							window.location.href=url;
-						}
-					},"json"
-				
-				);
-				});
-
-					
-			
-			
-				
-			});	
     	
     	</script>
     
@@ -73,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
         </div>
         <div class=header>
-            <div class=w> <a class=logo href="homepage.jsp">ecshop</a> 
+            <div class=w> <a class=logo href="mainpage/homepage.jsp">ecshop</a> 
                 <div class=search-form>
                     <input class=search-input id=search-input placeholder=请输入商品名称 />
                     <button class=search-btn id=search-btn style="height: 41px">搜索</button>
