@@ -119,57 +119,57 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <div class="banner">
                     <ul>
                     	<li>
-                            <a href="http://coding.imooc.com/class/109.html" target="_blank">
+                            <a href="javascript:void(0);" target="_blank">
                                 <img class="banner-img" src="//img12.360buyimg.com/da/jfs/t7486/85/2097038085/41277/8dbf5f28/59a7a469N55f52c1a.jpg" />
                             </a>
                         </li>
                         <li>
-                            <a href="http://coding.imooc.com/class/109.html" target="_blank">
+                            <a href="javascript:void(0);" target="_blank">
                                 <img class="banner-img" src="//img1.360buyimg.com/da/jfs/t9034/313/1372780724/201717/2a65fd4d/59b8dc04N762072f0.jpg" />
                             </a>
                         </li>
                         <li>
-                            <a href="http://coding.imooc.com/class/109.html" target="_blank">
+                            <a href="javascript:void(0);" target="_blank">
                                 <img class="banner-img" src="//img1.360buyimg.com/da/jfs/t9325/158/982543439/92414/6c2d2f28/59ba4a8aNb799bb9e.jpg" />
                             </a>
                         </li>
                     	 <li>
-                            <a href="http://coding.imooc.com/class/109.html" target="_blank">
+                            <a href="javascript:void(0);" target="_blank">
                                 <img class="banner-img" src="//img1.360buyimg.com/da/jfs/t9037/144/1178880257/202036/c034207d/59b60064Nb97ec546.jpg" />
                             </a>
                         </li>
                         <li>
-                            <a href="http://coding.imooc.com/class/109.html" target="_blank">
+                            <a href="javascript:void(0);" target="_blank">
                                 <img class="banner-img" src="//img11.360buyimg.com/babel/jfs/t8563/102/1393701174/88723/bda85274/59b8c3d4Nd349a04a.jpg" />
                             </a>
                         </li>
                         <li>
-                            <a href="http://coding.imooc.com/class/96.html" target="_blank">
+                            <a href="javascript:void(0);" target="_blank">
                                 <img class="banner-img" src="//img1.360buyimg.com/da/jfs/t9175/324/882302528/163890/cc6b0805/59b89c15Nb85eaac1.jpg" />
                             </a>
                         </li>
                         <li>
-                            <a href="./list.html?categoryId=100016" target="_blank">
+                            <a href="javascript:void(0);" target="_blank">
                                 <img class="banner-img" src="//img1.360buyimg.com/da/jfs/t7462/141/2922324773/100368/eef60dcc/59b77731N426fd076.jpg" />
                             </a>
                         </li>
                         <li>
-                            <a href="./list.html?categoryId=100001" target="_blank">
+                            <a href="javascript:void(0);" target="_blank">
                                 <img class="banner-img" src="//img10.360buyimg.com/babel/jfs/t8176/21/1446009464/141022/d2543fd5/59ba1ab7Nb143afa3.jpg" />
                             </a>
                         </li>
                         <li>
-                            <a href="./list.html?categoryId=100021" target="_blank">
+                            <a href="javascript:void(0);" target="_blank">
                                 <img class="banner-img" src="//img1.360buyimg.com/da/jfs/t7591/204/2966860970/185647/628adb0e/59b78d62Ne1ebdcf2.jpg" />
                             </a>
                         </li>
                         <li>
-                            <a href="./list.html?categoryId=100021" target="_blank">
+                            <a href="javascript:void(0);" target="_blank">
                                 <img class="banner-img" src="//img1.360buyimg.com/da/jfs/t9043/77/1478130387/156076/f2c8231e/59ba1d33Na47847a8.jpg" />
                             </a>
                         </li>
                         <li>
-                            <a href="./list.html?categoryId=100021" target="_blank">
+                            <a href="javascript:void(0);" target="_blank">
                                 <img class="banner-img" src="//img12.360buyimg.com/babel/jfs/t8821/344/1451687872/35248/25ac302b/59b9d5fdNbc7e74c3.jpg" />
                             </a>
                         </li>
@@ -182,8 +182,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
         </div>
         <div class="w">
+        
             <div class="floor-wrap">
-                 <h1 class="floor-title">F1 家用电器</h1>
+                 <h1 class="floor-title">★ 家用电器</h1>
  
                 <ul class="floor-con">
                     <li class="floor-item">
@@ -195,8 +196,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     
                 </ul>
             </div>
+            
             <div class="floor-wrap">
-                 <h1 class="floor-title">F2 数码3C</h1>
+                 <h1 class="floor-title">★ 数码3C</h1>
  
                 <ul class="floor-con">
                     <li class="floor-item">
@@ -210,7 +212,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </ul>
             </div>
             <div class="floor-wrap">
-                 <h1 class="floor-title">F3 服装箱包</h1>
+                 <h1 class="floor-title">★ 服装箱包</h1>
  
                 <ul class="floor-con">
                     <li class="floor-item">
@@ -224,7 +226,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </ul>
             </div>
             <div class="floor-wrap">
-                 <h1 class="floor-title">F4 食品生鲜</h1>
+                 <h1 class="floor-title">★ 食品生鲜</h1>
  
                 <ul class="floor-con">
                     <li class="floor-item">
@@ -238,7 +240,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </ul>
             </div>
             <div class="floor-wrap">
-                 <h1 class="floor-title">F5 酒水饮料</h1>
+                 <h1 class="floor-title">★ 酒水饮料</h1>
  
                 <ul class="floor-con">
                     
