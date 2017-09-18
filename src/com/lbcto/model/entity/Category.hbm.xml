@@ -20,6 +20,11 @@
                 <comment>类别名称</comment>
             </column>
         </property>
+        <property name="pic" type="java.lang.String">
+            <column name="pic" length="65535">
+                <comment>类别图片</comment>
+            </column>
+        </property>
         <property name="status" type="java.lang.Integer">
             <column name="status">
                 <comment>类别状态1-正常,2-已废弃</comment>

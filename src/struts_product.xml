@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="product_pack" namespace="/" extends="json-default">
+		<action name="getProductList" class="com.lbcto.controler.ProductAction" method="getProductList">
+			<result>/mainpage/list.jsp</result>
+		</action>
+		
+		
+		<action name="getProductDetail" class="com.lbcto.controler.ProductAction" method="getProductDetail">
+			<result>/mainpage/detail.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>    

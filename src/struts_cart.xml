@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="cart_pack" namespace="/" extends="json-default">
+		<action name="getCartVO" class="com.lbcto.controler.CartAction" method="getCartVO">
+			<result>/mainpage/cart.jsp</result>
+		</action>
+		
+		<action name="addCart" class="com.lbcto.controler.CartAction" method="addCart">
+			<result type="redirectAction">getCartVO</result>
+		</action>
+	
+	</package>
+
+</struts>    

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+<package name="category_package" namespace="/" extends="json-default">
+	
+	
+	<action name="test" class="com.lbcto.controler.CategoryAction" method="getCategory">
+		<!-- <result type="json">
+			<param name="root">clist</param>
+		</result> -->
+		<result type="redirect">/mainpage/homepage.jsp</result>
+	</action>
+	
+</package>
+</struts>    
