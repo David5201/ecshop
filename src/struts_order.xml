@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="order-pack" namespace="/" extends="json-default">
+		<action name="order-list" class="com.lbcto.controler.OrderAction" method="addOrder">
+			<result type="redirect">/User/order-list.jsp</result>
+		</action>
+		
+		<action name="show-order" class="com.lbcto.controler.OrderAction" method="showOrders">
+			<result>/User/order-list.jsp</result>
+		</action>
+		
+		<action name="show-order-detail" class="com.lbcto.controler.OrderAction" method="showOrderDetails">
+			<result>/User/order-detail.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>    
