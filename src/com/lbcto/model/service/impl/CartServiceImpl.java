@@ -12,7 +12,7 @@ import com.lbcto.model.dao.ProductDao;
 import com.lbcto.model.entity.Cart;
 import com.lbcto.model.service.CartService;
 
-@Service
+@Service("cartService")
 public class CartServiceImpl implements CartService {
 	
 	@Autowired
@@ -32,6 +32,7 @@ public class CartServiceImpl implements CartService {
 		for(Cart clist:cartDao.getCartInfoByUserId(uId)){
 			CartVO cartVO =new CartVO();
 			cartVO.setId(clist.getId());
+			cartVO.setProductId(clist.getProductId());
 			cartVO.setImgpath(productDao.getProductDetailById(clist.getProductId()).getMainImage());
 			cartVO.setInfo(productDao.getProductDetailById(clist.getProductId()).getSubtitle());
 			cartVO.setPrice(productDao.getProductDetailById(clist.getProductId()).getPrice());
@@ -58,6 +59,12 @@ public class CartServiceImpl implements CartService {
 	public Cart checkIsExistsService(int userId, int productId) {
 		// TODO Auto-generated method stub
 		return cartDao.checkIsExists(userId, productId);
+	}
+
+	@Override
+	public boolean deleteCartByUIdService(int uid) {
+		// TODO Auto-generated method stub
+		return cartDao.deleteCartByUId(uid);
 	}
 
 }

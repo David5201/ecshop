@@ -16,4 +16,6 @@ public interface CartService {
 	boolean changeCartCountService(int userId,int productId,int count);//修改数量
 	
 	Cart checkIsExistsService(int userId,int productId);//判断是否存在某商品
+	
+	boolean deleteCartByUIdService(int uid);
 }

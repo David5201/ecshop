@@ -5,4 +5,6 @@
 	<include file="struts_category.xml"></include>
 	<include file="struts_product.xml"></include>
 	<include file="struts_cart.xml"></include>
+	<include file="struts_address.xml"></include>
+	<include file="struts_order.xml"></include>
 </struts>    

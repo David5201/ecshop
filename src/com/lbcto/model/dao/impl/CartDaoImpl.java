@@ -67,4 +67,19 @@ public class CartDaoImpl implements CartDao {
 		return (Cart) query.uniqueResult();
 	}
 
+	@Override
+	public boolean deleteCartByUId(int uid) {
+		// TODO Auto-generated method stub
+		try {
+			Query query = sessionFactory.getCurrentSession().createQuery("delete from Cart where userId=?");
+			query.setParameter(0, uid);
+			query.executeUpdate();
+			return true;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+
 }

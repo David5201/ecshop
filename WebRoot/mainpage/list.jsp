@@ -8,6 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
+  		<base href="<%=basePath%>">
 		<meta http-equiv=x-ua-compatible content="ie=edge">
 		<meta name=viewport content="width=device-width,initial-scale=1">
 		<title>商品列表</title>
@@ -21,14 +22,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <div class=user-info> 
                 <c:if test="${empty sessionScope.user}">
 	                <span class="not-login"> 
-	                      <a href="../User/login.jsp" id="login" class="link" style="text-decoration: none;">登录</a>   
-	                      <a href="../User/register.jsp" id="register" class="link" style="text-decoration: none;">注册</a> 
+	                      <a href="User/login.jsp" id="login" class="link" style="text-decoration: none;">登录</a>   
+	                      <a href="User/register.jsp" id="register" class="link" style="text-decoration: none;">注册</a> 
 	                </span> 
                 </c:if> 
                 <c:if test="${!empty sessionScope.user}">
 	                <span class="login"> 
 	                        <a href="/" id="welcome" class="link" style="text-decoration: none;">欢迎，<span class=username>${user.username}</span></a>    
-	                        <a href="../loginoutAction" id="loginout" class="link" style="text-decoration: none;">退出</a> 
+	                        <a href="loginoutAction" id="loginout" class="link" style="text-decoration: none;">退出</a> 
 	                </span>
                 </c:if>
                 </div>
@@ -47,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
 		<div class=header>
 			 <div class=w> 
-			 <a class=logo href="../mainpage/homepage.jsp">ecshop</a> 
+			 <a class=logo href="mainpage/homepage.jsp">ecshop</a> 
                 <div class=search-form>
                     <input class=search-input id=search-input placeholder=请输入商品名称 style="width:574px;"/>
                     <button class=search-btn id=search-btn style="height: 41px">搜索</button>

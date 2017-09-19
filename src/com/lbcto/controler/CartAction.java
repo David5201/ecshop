@@ -21,11 +21,16 @@ public class CartAction {
 	private Integer productId;
 	private Integer count;
 	private Cart cart = new Cart();
+	private double allTotal=0;
 	
 	public String getCartVO(){
 		cartVOList = cartService.getCartVO(((User)ActionContext.getContext().getSession().get("user")).getId());
 		//System.out.println(cartVOList.size());
-		ActionContext.getContext().getSession().put("cartVOList", cartVOList);
+		ActionContext.getContext().getSession().put("cartVOList", cartVOList);	
+		for(CartVO cartVO : cartVOList){
+			allTotal+=cartVO.getTotal();
+		}
+		ActionContext.getContext().getSession().put("allTotal", allTotal);
 		return "success";
 	}
 	

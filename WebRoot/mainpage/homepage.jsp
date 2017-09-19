@@ -41,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <li class=nav-item>
                         <a class="link" href="getCartVO"><i class="fa fa-shopping-cart"></i> 购物车(<span class=cart-count>0</span>)</a>
                     </li>
-                    <li class=nav-item> <a class="link" href="User/order-list.jsp" >我的订单</a> 
+                    <li class=nav-item> <a class="link" href="show-order" >我的订单</a> 
                     </li>
                     <li class=nav-item> <a class="link" href="User/user-center.jsp">我的ecshop</a> 
                     </li>
@@ -53,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class=header>
             <div class=w> <a class=logo href="mainpage/homepage.jsp">ecshop</a> 
                 <div class=search-form>
-                    <input class=search-input id=search-input placeholder=请输入商品名称 />
+                    <input class=search-input id=search-input placeholder=请输入商品名称 style="width:574px;"/>
                     <button class=search-btn id=search-btn style="height: 41px">搜索</button>
                 </div>
             </div>

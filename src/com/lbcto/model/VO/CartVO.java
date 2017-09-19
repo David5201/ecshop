@@ -3,6 +3,7 @@ package com.lbcto.model.VO;
 public class CartVO {
 
 	private Integer id;
+	private Integer productId;
 	private String imgpath;
 	private String info;
 	private double price;
@@ -42,6 +43,26 @@ public class CartVO {
 		return total;
 	}
 	public void setTotal(Double total) {
+		this.total = total;
+	}
+	
+	public Integer getProductId() {
+		return productId;
+	}
+	public void setProductId(Integer productId) {
+		this.productId = productId;
+	}
+	
+	
+	public CartVO(Integer id, Integer productId, String imgpath, String info, double price, Integer count,
+			Double total) {
+		super();
+		this.id = id;
+		this.productId = productId;
+		this.imgpath = imgpath;
+		this.info = info;
+		this.price = price;
+		this.count = count;
 		this.total = total;
 	}
 	public CartVO(Integer id, String imgpath, String info, double price, Integer count, Double total) {

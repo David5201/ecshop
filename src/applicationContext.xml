@@ -46,16 +46,15 @@
 		<property name="mappingResources">
 			<list>
 				<value>com/lbcto/model/entity/User.hbm.xml</value>
-				<value>com/lbcto/model/entity/Shipping.hbm.xml</value>
+				<value>com/lbcto/model/entity/Address.hbm.xml</value>
 				<value>com/lbcto/model/entity/Order.hbm.xml</value>
 				<value>com/lbcto/model/entity/Product.hbm.xml</value>
 				<value>com/lbcto/model/entity/Cart.hbm.xml</value>
-				<value>
-					com/lbcto/model/entity/BusinessInfo.hbm.xml
-				</value>
+				<value>com/lbcto/model/entity/BusinessInfo.hbm.xml</value>
 				<value>com/lbcto/model/entity/OrderItem.hbm.xml</value>
 				<value>com/lbcto/model/entity/Comments.hbm.xml</value>
-				<value>com/lbcto/model/entity/Category.hbm.xml</value></list>
+				<value>com/lbcto/model/entity/Category.hbm.xml</value>
+			</list>
 		</property></bean>
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">

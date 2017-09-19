@@ -8,6 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML>
 <html>
   <head>
+  		<base href="<%=basePath%>">
 		<meta http-equiv=x-ua-compatible content="ie=edge">
 		<meta name=viewport content="width=device-width,initial-scale=1">
 		<title>订单列表</title>
@@ -21,14 +22,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <div class=user-info> 
                 <c:if test="${empty sessionScope.user}">
 	                <span class="not-login"> 
-	                      <a href="../User/login.jsp" id="login" class="link" style="text-decoration: none;">登录</a>   
-	                      <a href="../User/register.jsp" id="register" class="link" style="text-decoration: none;">注册</a> 
+	                      <a href="User/login.jsp" id="login" class="link" style="text-decoration: none;">登录</a>   
+	                      <a href="User/register.jsp" id="register" class="link" style="text-decoration: none;">注册</a> 
 	                </span> 
                 </c:if> 
                 <c:if test="${!empty sessionScope.user}">
 	                <span class="login"> 
 	                        <a href="/" id="welcome" class="link" style="text-decoration: none;">欢迎，<span class=username>${user.username}</span></a>    
-	                        <a href="../loginoutAction" id="loginout" class="link" style="text-decoration: none;">退出</a> 
+	                        <a href="loginoutAction" id="loginout" class="link" style="text-decoration: none;">退出</a> 
 	                </span>
                 </c:if>
                 </div>
@@ -46,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
         </div>
 		<div class=header>
-			 <div class=w> <a class=logo href="../mainpage/homepage.jsp">ecshop</a> 
+			 <div class=w> <a class=logo href="#">ecshop</a> 
                 <div class=search-form>
                     <input class=search-input id=search-input placeholder=请输入商品名称 />
                     <button class=search-btn id=search-btn style="height: 41px">搜索</button>
@@ -57,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="crumb">
 			<div class="w">
 				<div class="crumb-list">
-					<a href="../mainpage/homepage.jsp" class="crumb-item">ecshop</a>
+					<a href="#p" class="crumb-item">ecshop</a>
 					<span>></span>
 					<span class="crumb-item">我的订单</span>
 				</div>
@@ -68,57 +69,80 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="left-con">
 				<ul class="menu">
 					<li class="menu-item ">
-						<a class="link" href="user-center.jsp">个人中心</a>
+						<a class="link" href="User/user-center.jsp">个人中心</a>
 					</li>
 					<li class="menu-item active">
-						<a class="link" href="order-list.jsp">我的订单</a>
+						<a class="link" href="User/order-list.jsp">我的订单</a>
 					</li>
 					<li class="menu-item">
-						<a class="link" href="pass-update.jsp">修改密码</a>
+						<a class="link" href="User/pass-update.jsp">修改密码</a>
 					</li>
 					<li class="menu-item">
-						<a class="link" href="about.jsp">关于ecshop</a>
+						<a class="link" href="User/about.jsp">关于ecshop</a>
 					</li>
 				</ul>
 			</div>
 
-			<!-- <div class="right-con">
-				<div class="panel">
-					<div class="panel-title">
-						我的信息
-					</div>
-					<div class="panel-body">
-						<div class="loading">
-							
+		<div class="right-con">
+			<div class="panel">
+				<div class="panel-title">我的订单</div>
+				<div class="panel-body">
+					<div class="order-list">
+						<div class="order-list">
+							<table class="order-list-table header">
+								<tbody>
+									<tr>
+										<td class="order-list-cell cell-img">订单编号</td>
+										<td class="order-list-cell cell-img">
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;
+										创建时间</td>
+										<td class="order-list-cell cell-img">
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										收件人</td>
+										<td class="order-list-cell cell-img">
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										状态</td>
+										<td class="order-list-cell cell-img">
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										合计</td>
+										<td class="order-list-cell cell-img">&nbsp;</td>
+										<td class="order-list-cell cell-img">
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;
+										详情</td>
+									</tr>
+								</tbody>
+							</table>
+							<c:forEach items="${sessionScope.orderlist}" var="orderlist">
+							<table class="order-list-table order-item">
+								<tbody>
+									<tr>
+										<td class="order-info" colspan="6"><span
+											class="order-text"> <span>订单号：</span> <a class="link"
+												href="show-order-detail?orderNo=${orderlist.orderNo}">${orderlist.orderNo}</a>
+										</span> <span class="order-text">${orderlist.createTime}</span> <span
+											class="order-text"> <span>收件人：${orderlist.endTime}</span>
+										</span> <span class="order-text"> 
+										<span>订单状态：未支付</span>
+										</span> <span class="order-text"> <span>订单总价：</span> <span
+												class="enhance">￥${orderlist.payment}</span>
+										</span> <a class="link pull-right"
+											href="show-order-detail?orderNo=${orderlist.orderNo}">查看详情&gt;</a>
+										</td>
+									</tr>									
+								</tbody>
+							</table>
+							</c:forEach>
 						</div>
-						<div class="user-info"> 
-                    		<div class="text-line"> 
-                    			<span class="text-label">用户名：</span> 
-                    			<span class="text">lubiao</span> 
-                    		</div> 
-                    		<div class="text-line"> 
-                    			<span class="text-label">电 &nbsp;&nbsp;话：</span> 
-                    			<span class="text">18162350731</span> 
-                    		</div> <div class="text-line">
-                    			<span class="text-label">邮 &nbsp;&nbsp;箱：</span> 
-                    			<span class="text">1234567891@qq.com</span>
-                    		</div> 
-                    		<div class="text-line">
-                    			<span class="text-label">问 &nbsp;&nbsp;题：</span> 
-                    			<span class="text">我的车牌号是？</span> 
-                    		</div> <div class="text-line"> 
-                    			<span class="text-label">答 &nbsp;&nbsp;案：</span> 
-                    			<span class="text">鄂A88888</span> 
-                    		</div> 
-                    		<div class="text-line"> 
-                    				<br>
-                    			<a href="user-info-update.jsp" class="btn btn-mini btn-submit">编辑</a>
-                    		</div> 
-                    	</div>
 					</div>
+					<div class="pagination"></div>
 				</div>
-			</div> -->
+			</div>
 		</div>
+	</div>
 		
 		
 		<div class=footer>

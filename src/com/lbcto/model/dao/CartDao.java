@@ -13,4 +13,6 @@ public interface CartDao {
 	boolean changeCartCount(int userId,int productId,int count);//修改数量
 	
 	Cart checkIsExists(int userId,int productId);//判断是否存在某商品
+	
+	boolean deleteCartByUId(int uid);
 }
