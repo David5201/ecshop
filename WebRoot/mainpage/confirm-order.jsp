@@ -69,8 +69,13 @@
 				 		count +=c+",";
 				 	}
 				 });
-				 alert(count);
-				window.location.href="order-list?addressID="+addressID+"&payment="+payment+"&productsID="+str+"&count="+count;
+				 //alert(count);
+				 if(addressID==0){
+				 	alert("请选择收货地址");
+				 }else{
+				 	window.location.href="order-list?addressID="+addressID+"&payment="+payment+"&productsID="+str+"&count="+count;
+				 }
+					
 				
 			}); 
 			

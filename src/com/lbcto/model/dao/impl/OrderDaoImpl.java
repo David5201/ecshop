@@ -55,19 +55,29 @@ public class OrderDaoImpl implements OrderDao {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<OrderItem> getOrderDetailsByOrderNo(long orderNO) {
 		// TODO Auto-generated method stub
-		System.out.println("getOrderDetailsByOrderNo");
-		Query query = sessionFactory.getCurrentSession().createQuery("from OrderItem where orderNO=?");
+		//System.out.println("getOrderDetailsByOrderNo");
+		Query query = sessionFactory.getCurrentSession().createQuery("from OrderItem where orderNo=?");
 		query.setLong(0, orderNO);
-		return query.list();
+		
+		List<OrderItem> ll = null;
+		try {
+			ll = query.list();
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//System.out.println(ll.size());
+		return ll;
 	}
 
 	@Override
 	public Order getOrderByOrderNo(long orderNO) {
 		// TODO Auto-generated method stub
-		Query query = sessionFactory.getCurrentSession().createQuery("from Order where orderNO=?");
+		Query query = sessionFactory.getCurrentSession().createQuery("from Order where orderNo=?");
 		query.setLong(0, orderNO);
 		return (Order) query.uniqueResult();
 	}

@@ -142,7 +142,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</tbody>
 					</table>
 					<p class="total pull-right">
-						<span>订单总价：</span> <span class="enhance">￥7914.4</span>
+						<span>订单总价：</span> <span class="enhance">￥${sessionScope.order.payment}</span>
 					</p>
 				</div>
 			</div>
